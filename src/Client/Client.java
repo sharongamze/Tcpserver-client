@@ -60,13 +60,13 @@ public class Client {
         System.out.println("Num of submarines: " + validSubmarine);
         System.out.println("The submarines: " + submarines);
 
-        int[][] Task_4 = {
+        int[][] Task_four = {
                 {100,100,100},
                 {500,900,300}
         };
 
         toServer.writeObject("Task four");
-        toServer.writeObject(Task_4);
+        toServer.writeObject(Task_four);
         Index source_task4=new Index(1, 0);
         Index destination_task4=new Index(1, 2);
         toServer.writeObject(source_task4);
@@ -77,12 +77,12 @@ public class Client {
             System.out.println(entry.getKey() + " " + "value " + entry.getValue());
         });
 
-        toServer.writeObject("stop");
-        System.out.println("\nclient: Close all streams");
+        toServer.writeObject("stop server");
+        System.out.println("\nClient: Close all streams");
         fromServer.close();
         toServer.close();
         socket.close();
-        System.out.println("client: Closed operational socket");
+        System.out.println("Client: Closed operational socket");
 
     }
 }

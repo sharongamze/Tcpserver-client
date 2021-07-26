@@ -105,8 +105,8 @@ public class MatrixIHandler implements IHandler {
 
                    break;
                 }
-                case "stop": {
-                    System.out.println("stopping server");
+                case "stop server": {
+                    System.out.println("Stopping server!");
                     doWork = false;
                     break;
                 }

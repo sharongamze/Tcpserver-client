@@ -48,7 +48,7 @@ public class MinCost<T> {
         }
     }
 
-   // from getpath() calculate the cost of paths
+   // from getpaths() calculate the cost of paths
     public void calculate_cost(){
         int sum;
         for(List<Node<T>> list: all_paths){

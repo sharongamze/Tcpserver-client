@@ -28,9 +28,7 @@ public class DFS<T> {
      * @return one_groups
      */
     public List<HashSet<Node<T>>> getallgroups(Traversable<T> partofgraph){
-
         List<Node<T>> all_nodes=partofgraph.getallnodes();
-
         for(Node<T> node: all_nodes){
             if (partofgraph.getValue(node)==1){
                 nodes_value_one.add(node); //all nodes value equal to 1
@@ -58,7 +56,6 @@ public class DFS<T> {
             if the current reachable node is not in finished set && working stack
             push to stack
      */
-
     public HashSet<Node<T>> traverse(Traversable<T> partOfGraph, Node<T> current_node){
         threadLocalPush(current_node);
         while(!stack.get().isEmpty()) {
@@ -88,16 +85,16 @@ public class DFS<T> {
                 {1, 0, 1,0}
         };
         Matrix source_new=new Matrix(source);
-        List<HashSet<Node<Index>>> lists = new ArrayList<>();
+        List<HashSet<Node<Index>>> lists;
         TraversableMatrix traversableMatrix = new TraversableMatrix(source_new);
         DFS<Index> dfs = new DFS<>();
         lists = dfs.getallgroups(traversableMatrix);
-        List<HashSet<Node<Index>>> linkedPointsLists_test = new ArrayList<>();
+        List<HashSet<Node<Index>>> Lists_test = new ArrayList<>();
         for(HashSet<Node<Index>> list:lists) {
             list = list.stream().sorted((xs1, xs2) -> Integer.compare(xs1.getData().getRow(), xs2.getData().getRow())).collect(Collectors.toCollection(LinkedHashSet::new));
-            linkedPointsLists_test.add(list);
+            Lists_test.add(list);
         }
-        System.out.println(linkedPointsLists_test);
+        System.out.println(Lists_test);
 
 
     }

@@ -27,7 +27,6 @@ public class Submarine {
      */
     public int submarinesGame(List<List<Node<Index>>> all_one_groups) {
         num_of_submarines = 0;
-
         for (List<Node<Index>> list : all_one_groups) {
             if (checkifsubmarine(list) ) {
                num_of_submarines++;
@@ -51,9 +50,9 @@ public class Submarine {
         }
         min_row = list_of_one.get(0).getData().getRow(); //assumed after sort
         max_row = list_of_one.get(list_of_one.size() - 1).getData().getRow();
-
         min_col = list_of_one.get(0).getData().getColumn();
         max_col = list_of_one.get(0).getData().getColumn();
+
         for(Node<Index> index: list_of_one){
             if(index.getData().getColumn() <= min_col){
                 min_col=index.getData().getColumn();
